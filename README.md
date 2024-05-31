@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
 
+## Preparation
+
+This project uses [pre-commit](https://pre-commit.com/):
+
+```bash
+pre-commit install
+pre-commit install --hook-type commit-msg
+```
+
 ## Getting Started
 
 First, run the development server:
