@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'CSERun - UNSW',
     images: [
       {
-        url: 'https://cserun.bojin.co/cserun-logo.png',
+        url: 'https://cserun.bojin.co/cserun-op.png',
       },
     ],
     type: 'website',
