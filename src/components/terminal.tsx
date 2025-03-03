@@ -40,7 +40,7 @@ interface ProgressLine extends BaseTerminalLine {
 }
 
 // Types for displayed lines (with additional runtime properties)
-interface SpinnerRunningDisplay {
+interface SpinnerRunningDisplay extends BaseTerminalLine {
   type: "spinner-running";
   prefix: string;
   spinnerText: string;
@@ -49,7 +49,7 @@ interface SpinnerRunningDisplay {
   completionText: string;
 }
 
-interface ProgressDisplay {
+interface ProgressDisplay extends BaseTerminalLine {
   type: "progress";
   label: ReactNode;
   progress: number;
@@ -461,8 +461,10 @@ const AnimatedTerminal: React.FC = () => {
               return newLines;
             }
 
+            const spinnerLine = newLines[lastIndex] as SpinnerRunningDisplay;
+
             newLines[lastIndex] = {
-              ...newLines[lastIndex],
+              ...spinnerLine,
               isCompleted: true,
             };
             return newLines;
