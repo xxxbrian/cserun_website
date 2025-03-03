@@ -20,9 +20,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ children, language }) => {
       <div className="px-4 py-2 bg-[#0e1116] text-xs text-gray-400 border-b border-gray-800">
         {language}
       </div>
-      <pre className="p-4 overflow-x-auto text-gray-200 font-mono text-sm">
-        <code>{children}</code>
-      </pre>
+      <div className="overflow-x-auto w-full">
+        <pre className="p-4 text-gray-200 font-mono text-sm whitespace-pre">
+          <code>{children}</code>
+        </pre>
+      </div>
     </div>
   );
 };
@@ -138,13 +140,13 @@ const CSERunLandingPage: React.FC = () => {
           <h2 className="text-3xl font-bold mb-8 font-mono">Installation</h2>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-gray-700 w-full overflow-hidden">
               <h3 className="text-xl font-bold mb-4 font-mono flex items-center">
-                <SiHomebrew className="w-6 h-6 mr-2" />
-                Homebrew (macOS)
+                <SiHomebrew className="w-5 h-5 mr-2 flex-shrink-0" />
+                <span className="truncate">Homebrew (macOS)</span>
               </h3>
               <div className="text-gray-300 mb-4">
-                <p>
+                <p className="text-sm sm:text-base">
                   Recommended installation method for macOS users. Install
                   CSERun using Homebrew package manager:
                 </p>
@@ -155,13 +157,13 @@ brew install cserun`}
               </CodeBlock>
             </div>
 
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-gray-700 w-full overflow-hidden">
               <h3 className="text-xl font-bold mb-4 font-mono flex items-center">
-                <SiRust className="w-6 h-6 mr-2" />
-                Cargo (Rust)
+                <SiRust className="w-5 h-5 mr-2 flex-shrink-0" />
+                <span className="truncate">Cargo (Rust)</span>
               </h3>
               <div className="text-gray-300 mb-4">
-                <p>
+                <p className="text-sm sm:text-base">
                   For Rust users, install CSERun directly using Cargo package
                   manager:
                 </p>
