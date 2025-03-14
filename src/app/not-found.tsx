@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import FuzzyText from "./ui/fuzzytext";
+import FuzzyText from "../components/fuzzy-text";
 
 export default function NotFound() {
   const router = useRouter();
